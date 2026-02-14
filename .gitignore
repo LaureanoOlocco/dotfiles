@@ -1,0 +1,7 @@
+# Neovim
+nvim/plugin/
+nvim/.luarc.json
+
+# OS
+.DS_Store
+Thumbs.db

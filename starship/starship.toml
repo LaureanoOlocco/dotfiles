@@ -1,0 +1,113 @@
+format = """
+[╭─░▒▓](#82aaff)\
+[ 󰕈 ](bg:#82aaff fg:#011627)\
+[](bg:#233554 fg:#82aaff)\
+$directory\
+[ ](fg:#233554  bg:#82aaff)\
+$git_branch\
+$git_status\
+[ ](fg:#82aaff bg:none)\
+$fill\
+[](fg:#233554 bg:none)\
+$python\
+$c\
+$cpp\
+$cmd_duration\
+$status\
+[  ](fg:#82aaff bg:#233554)\
+$time\
+[](fg:#233554)\
+[ ](fg:#233554)\
+\n$character"""
+[character]
+format = "[╰─](bold #82aaff) "
+[fill]
+symbol = "·"
+style = "dimmed #5f7e97"
+
+
+[status]
+disabled = false
+format = "[$symbol]($style)"
+symbol = " "
+success_symbol = " "
+style = "#ef5350 bg:#233554"
+success_style = "#addb67 bg:#233554"
+recognize_signal_code = false
+pipestatus = true
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:#233554"
+format = '[[  $time ](fg:#7fdbca bg:#233554)]($style)'
+
+
+[directory]
+style = "fg:#d6deeb bg:#233554"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = " 󰈙 "
+"Downloads" = "  "
+"Music" = " "
+"Pictures" = " "
+
+[git_branch]
+symbol = ""
+style = "bg:#82aaff"
+format = '[[$symbol $branch ](fg:#011627 bg:#82aaff)]($style)'
+truncation_length = 20
+truncation_symbol = "…"
+
+[git_status]
+style = "bg:#82aaff"
+format = '[[($all_status$ahead_behind )](fg:#011627 bg:#82aaff)]($style)'
+stashed = "󰏗 ${count} "
+modified = "󰏫 ${count} "
+untracked = " ${count} "
+ahead = "󰜸 ${count} "
+behind = "󰜯 ${count} "
+[nodejs]
+symbol = " "
+style = "bg:#233554"
+format = '[[ $symbol ($version) ](fg:#addb67 bg:#233554)]($style)'
+
+[rust]
+symbol = " "
+style = "bg:#233554"
+format = '[[ $symbol ($version) ](fg:#f78c6c bg:#233554)]($style)'
+
+[golang]
+symbol = " "
+style = "bg:#233554"
+format = '[[ $symbol ($version) ](fg:#7fdbca bg:#233554)]($style)'
+
+[php]
+symbol = " "
+style = "bg:#233554"
+format = '[[ $symbol ($version) ](fg:#c792ea bg:#233554)]($style)'
+
+[python]
+symbol = " "
+style = "bg:#233554"
+format = '[[ $symbol ($version) (\($virtualenv\)) ](fg:#ffcb6b bg:#233554)[ ](fg:#82aaff bg:#233554)]($style)'
+
+[c]
+symbol = " "
+style = "bg:#233554"
+format = '[[ $symbol($version) ](fg:#82aaff bg:#233554)[ ](fg:#82aaff bg:#233554)]($style)'
+
+[cpp]
+symbol = " "
+
+[cmd_duration]
+min_time = 500
+format = "[$duration ]($style)"
+style = "#ffcb6b bg:#233554"
+
+# TODO make the clock change colour too
+
+[battery]
