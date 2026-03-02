@@ -9,10 +9,10 @@ return {
         enabled = true,
         auto_trigger = true,
         keymap = {
-          accept = "<C-l>",
-          next = "<C-j>",
-          prev = "<C-k>",
-          dismiss = "<C-h>",
+          accept = "<M-l>",
+          next = "<M-j>",
+          prev = "<M-k>",
+          dismiss = "<M-h>",
         },
       },
       panel = {
@@ -22,4 +22,3 @@ return {
     },
   },
 }
-
