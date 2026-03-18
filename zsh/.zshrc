@@ -439,3 +439,17 @@ zle-line-init() {
 }
 zle -N zle-line-init
 eval "$(zellij setup --generate-auto-start zsh)"
+
+# opencode
+export PATH=/home/eclypsium/.opencode/bin:$PATH
+export OLLAMA_HOST=http://localhost:11434
+
+ollama-local() {
+  export OLLAMA_HOST=http://localhost:11434
+  echo "Ollama now using local at $OLLAMA_HOST"
+}
+
+ollama-remote() {
+  export OLLAMA_HOST=http://172.16.20.253:11434
+  echo "Ollama now using remote at $OLLAMA_HOST"
+}

@@ -58,16 +58,17 @@ truncation_symbol = "…/"
 [git_branch]
 symbol = ""
 style = "bg:#82aaff"
-format = '[[$symbol $branch ](fg:#011627 bg:#82aaff)]($style)'
+format = '[[$symbol $branch](fg:#011627 bg:#82aaff)]($style)'
 truncation_length = 20
 truncation_symbol = "…"
 
 [git_status]
 style = "bg:#82aaff"
-format = '[[($all_status$ahead_behind )](fg:#011627 bg:#82aaff)]($style)'
+format = '[[( $all_status$ahead_behind )](fg:#011627 bg:#82aaff)]($style)'
 stashed = "󰏗 ${count} "
 modified = "󰏫 ${count} "
 untracked = " ${count} "
+deleted = "󰆴 ${count} "
 ahead = "󰜸 ${count} "
 behind = "󰜯 ${count} "
 [nodejs]
