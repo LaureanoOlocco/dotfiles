@@ -15,34 +15,55 @@ family = "JetBrainsMono Nerd Font"
 style = "Bold"
 
 [colors.primary]
-background = "#011627"
-foreground = "#d6deeb"
+background = "#181818"
+foreground = "#D4D4D4"
 
 [colors.cursor]
-cursor = "#80a4c2"
+text = "#181818"
+cursor = "#81A1C1"
+
+[colors.vi_mode_cursor]
+text = "#181818"
+cursor = "#70B489"
+
+[colors.search.matches]
+foreground = "#181818"
+background = "#EBC88D"
+
+[colors.search.focused_match]
+foreground = "#181818"
+background = "#87C3FF"
+
+[colors.footer_bar]
+foreground = "#D4D4D4"
+background = "#242424"
+
+[colors.selection]
+text = "#E4E4E4"
+background = "#303030"
 
 [colors.normal]
-black =   "#1d3b53"
-red =     "#fc514e"
-green =   "#22da6e"
-yellow =  "#e3d18a"
-blue =    "#82aaff"
-magenta = "#c792ea"
-cyan =    "#21c7a8"
-white =   "#ffffff"
+black =   "#242424"
+red =     "#FC6B83"
+green =   "#3FA266"
+yellow =  "#D2943E"
+blue =    "#81A1C1"
+magenta = "#B48EAD"
+cyan =    "#88C0D0"
+white =   "#E4E4E4"
 
 [colors.bright]
-black =   "#7fdbca"
-red =     "#ff5874"
-green =   "#22da6e"
-yellow =  "#ffeb95"
-blue =    "#82aaff"
-magenta = "#c792ea"
-cyan =    "#7fdbca"
-white =   "#ffffff"
+black =   "#4A4A4A"
+red =     "#FC6B83"
+green =   "#70B489"
+yellow =  "#F1B467"
+blue =    "#87A6C4"
+magenta = "#B48EAD"
+cyan =    "#88C0D0"
+white =   "#E4E4E4"
 [[keyboard.bindings]]
 key = "F11"
-action = "ToggleFullscreen" 
+action = "ToggleFullscreen"
 [window]
 padding.x = 0
 padding.y = 0
@@ -53,3 +74,10 @@ style = { shape = "Block", blinking = "On" }
 blink_interval = 500
 [scrolling]
 history = 10000
+
+[[keyboard.bindings]]
+key = "Return"
+mods = "Shift"
+chars = "\u001B\r"
+[env]
+TERM = "xterm-256color"

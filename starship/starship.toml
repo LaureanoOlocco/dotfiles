@@ -1,53 +1,81 @@
+palette = "cursor_dark"
+add_newline = false
+
 format = """
-[╭─░▒▓](#82aaff)\
-[ 󰕈 ](bg:#82aaff fg:#011627)\
-[](bg:#233554 fg:#82aaff)\
+[╭─░▒▓](blue)\
+[  ](bg:blue fg:base)\
+[](bg:panel fg:blue)\
 $directory\
-[ ](fg:#233554  bg:#82aaff)\
+[ ](fg:panel  bg:blue)\
 $git_branch\
 $git_status\
-[ ](fg:#82aaff bg:none)\
+$git_state\
+[ ](fg:blue bg:none)\
 $fill\
-[](fg:#233554 bg:none)\
+[](fg:panel bg:none)\
 $python\
 $c\
 $cpp\
 $cmd_duration\
 $status\
-[  ](fg:#82aaff bg:#233554)\
+[  ](fg:blue bg:panel)\
+$battery\
+[  ](fg:blue_soft bg:panel)\
 $time\
-[](fg:#233554)\
-[ ](fg:#233554)\
+[](fg:panel)\
+[ ](fg:panel)\
 \n$character"""
+
+[palettes.cursor_dark]
+base = "#181818"
+panel = "#242424"
+panel_soft = "#1d1d1d"
+text = "#D4D4D4"
+muted = "#8E8E8E"
+blue = "#81A1C1"
+blue_soft = "#87A6C4"
+green = "#70B489"
+yellow = "#F1B467"
+yellow_soft = "#EBC88D"
+red = "#FC6B83"
+red_soft = "#F14C4C"
+magenta = "#B48EAD"
+cyan = "#88C0D0"
+
 [character]
-format = "[╰─](bold #82aaff) "
+success_symbol = "[╰─](bold blue)"
+error_symbol = "[╰─](bold blue)"
+vimcmd_symbol = "[╰─](bold yellow)"
 [fill]
-symbol = "·"
-style = "dimmed #5f7e97"
+symbol = "─"
+style = "muted"
 
 
 [status]
 disabled = false
 format = "[$symbol]($style)"
-symbol = " "
-success_symbol = " "
-style = "#ef5350 bg:#233554"
-success_style = "#addb67 bg:#233554"
+symbol = " "
+success_symbol = " "
+style = "blue_soft bg:panel"
+success_style = "blue_soft bg:panel"
 recognize_signal_code = false
 pipestatus = true
 
 [time]
 disabled = false
 time_format = "%R"
-style = "bg:#233554"
-format = '[[  $time ](fg:#7fdbca bg:#233554)]($style)'
+style = "bg:panel"
+format = '[[  ](fg:blue_soft bg:panel)[$time ](fg:cyan bg:panel)]($style)'
 
 
 [directory]
-style = "fg:#d6deeb bg:#233554"
-format = "[ $path ]($style)"
+style = "fg:text bg:panel"
+format = "[ $path$read_only ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
+home_symbol = "~"
+read_only = " 󰌾"
+read_only_style = "fg:yellow bg:panel"
 
 [directory.substitutions]
 "Documents" = " 󰈙 "
@@ -57,49 +85,55 @@ truncation_symbol = "…/"
 
 [git_branch]
 symbol = ""
-style = "bg:#82aaff"
-format = '[[$symbol $branch](fg:#011627 bg:#82aaff)]($style)'
+style = "bg:blue"
+format = '[[$symbol $branch](fg:base bg:blue)]($style)'
 truncation_length = 20
 truncation_symbol = "…"
 
 [git_status]
-style = "bg:#82aaff"
-format = '[[( $all_status$ahead_behind )](fg:#011627 bg:#82aaff)]($style)'
+style = "bg:blue"
+format = '[[( $all_status$ahead_behind )](fg:base bg:blue)]($style)'
 stashed = "󰏗 ${count} "
 modified = "󰏫 ${count} "
 untracked = " ${count} "
 deleted = "󰆴 ${count} "
+staged = " ${count} "
 ahead = "󰜸 ${count} "
 behind = "󰜯 ${count} "
+
+[git_state]
+style = "bg:blue"
+format = '[[($state( $progress_current/$progress_total) )](fg:base bg:blue)]($style)'
+
 [nodejs]
 symbol = " "
-style = "bg:#233554"
-format = '[[ $symbol ($version) ](fg:#addb67 bg:#233554)]($style)'
+style = "bg:panel"
+format = '[[ $symbol ($version) ](fg:green bg:panel)]($style)'
 
 [rust]
 symbol = " "
-style = "bg:#233554"
-format = '[[ $symbol ($version) ](fg:#f78c6c bg:#233554)]($style)'
+style = "bg:panel"
+format = '[[ $symbol ($version) ](fg:yellow bg:panel)]($style)'
 
 [golang]
 symbol = " "
-style = "bg:#233554"
-format = '[[ $symbol ($version) ](fg:#7fdbca bg:#233554)]($style)'
+style = "bg:panel"
+format = '[[ $symbol ($version) ](fg:cyan bg:panel)]($style)'
 
 [php]
 symbol = " "
-style = "bg:#233554"
-format = '[[ $symbol ($version) ](fg:#c792ea bg:#233554)]($style)'
+style = "bg:panel"
+format = '[[ $symbol ($version) ](fg:magenta bg:panel)]($style)'
 
 [python]
 symbol = " "
-style = "bg:#233554"
-format = '[[ $symbol ($version) (\($virtualenv\)) ](fg:#ffcb6b bg:#233554)[ ](fg:#82aaff bg:#233554)]($style)'
+style = "bg:panel"
+format = '[[ $symbol ($version) (\($virtualenv\)) ](fg:yellow_soft bg:panel)[ ](fg:blue bg:panel)]($style)'
 
 [c]
 symbol = " "
-style = "bg:#233554"
-format = '[[ $symbol($version) ](fg:#82aaff bg:#233554)[ ](fg:#82aaff bg:#233554)]($style)'
+style = "bg:panel"
+format = '[[ $symbol($version) ](fg:blue bg:panel)[ ](fg:blue bg:panel)]($style)'
 
 [cpp]
 symbol = " "
@@ -107,8 +141,20 @@ symbol = " "
 [cmd_duration]
 min_time = 500
 format = "[$duration ]($style)"
-style = "#ffcb6b bg:#233554"
-
-# TODO make the clock change colour too
+style = "yellow_soft bg:panel"
 
 [battery]
+disabled = false
+format = '[[ $symbol$percentage ](fg:blue_soft bg:panel)]($style)'
+
+[[battery.display]]
+threshold = 20
+style = 'fg:red bg:panel'
+
+[[battery.display]]
+threshold = 60
+style = 'fg:yellow bg:panel'
+
+[[battery.display]]
+threshold = 100
+style = 'fg:green bg:panel'

@@ -7,11 +7,23 @@ return {
   event = "VeryLazy",
   config = function()
     local get_hex = require("cokeline.hlgroups").get_hl_attr
+    local palette = {
+      base = {
+        bg_hi = "#242424",
+        bg_alt = "#141414",
+        fg = "#D4D4D4",
+        comment = "#7D7D7D",
+        link = "#81A1C1",
+        git_modified = "#F1B467",
+        error = "#F14C4C",
+        warn = "#F8C762",
+      },
+    }
 
-    local active_bg = "#1d3b53"
-    local inactive_bg = "#011627"
-    local active_fg = get_hex("Normal", "fg")
-    local inactive_fg = get_hex("Comment", "fg")
+    local active_bg = palette.base.bg_hi
+    local inactive_bg = palette.base.bg_alt
+    local active_fg = get_hex("Normal", "fg") or palette.base.fg
+    local inactive_fg = get_hex("Comment", "fg") or palette.base.comment
 
     require("cokeline").setup({
       show_if_buffers_are_at_least = 2,
@@ -45,7 +57,7 @@ return {
             return buffer.is_focused and "▎" or " "
           end,
           fg = function(buffer)
-            return buffer.is_focused and "#82aaff" or nil
+            return buffer.is_focused and palette.base.link or nil
           end,
         },
        -- { text = " " },
@@ -66,7 +78,7 @@ return {
             return buffer.is_modified and "● " or ""
           end,
           fg = function(buffer)
-            return buffer.is_modified and "#ffcb6b" or nil
+            return buffer.is_modified and palette.base.git_modified or nil
           end,
         },
         {
@@ -80,9 +92,9 @@ return {
           end,
           fg = function(buffer)
             if buffer.diagnostics.errors > 0 then
-              return "#ef5350"
+              return palette.base.error
             elseif buffer.diagnostics.warnings > 0 then
-              return "#ffcb6b"
+              return palette.base.warn
             end
           end,
         },

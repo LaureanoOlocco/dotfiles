@@ -1,4 +1,4 @@
-# ~/.zshrc file for zsh interactive shells.
+# ~/zshrc file for zsh interactive shells.
 # see /usr/share/doc/zsh/examples/zshrc for examples
 
 setopt autocd              # change directory just by typing its name
@@ -136,33 +136,33 @@ if [ "$color_prompt" = yes ]; then
 if [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
     . /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
     ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
-   
+
     # Elementos básicos
     ZSH_HIGHLIGHT_STYLES[default]=none
     ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=red,underline
     ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=blue,bold        # if, then, else, etc
     ZSH_HIGHLIGHT_STYLES[arg0]='fg=31,bold'             # Comandos principales (ls, cd, etc)
-   
+
     # Aliases y precomandos
     ZSH_HIGHLIGHT_STYLES[suffix-alias]=fg=blue,underline
     ZSH_HIGHLIGHT_STYLES[global-alias]=fg=blue,bold
     ZSH_HIGHLIGHT_STYLES[precommand]=fg=blue,underline     # sudo, time, etc
-   
+
     # Separadores y rutas
     ZSH_HIGHLIGHT_STYLES[commandseparator]=fg=cyan,bold    # ; && || |
     ZSH_HIGHLIGHT_STYLES[path]=fg=208                     # Rutas de archivos
     ZSH_HIGHLIGHT_STYLES[path_pathseparator]=fg=cyan
     ZSH_HIGHLIGHT_STYLES[autodirectory]=fg=blue,underline
-   
+
     # Opciones y argumentos
     ZSH_HIGHLIGHT_STYLES[single-hyphen-option]=fg=208     # -a, -l, -r
     ZSH_HIGHLIGHT_STYLES[double-hyphen-option]=fg=208     # --help, --version
-   
+
     # Strings y argumentos
     ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=fg=green
     ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=green
     ZSH_HIGHLIGHT_STYLES[dollar-quoted-argument]=fg=green
-   
+
     # Expansiones y sustituciones
     ZSH_HIGHLIGHT_STYLES[globbing]=fg=magenta,bold         # *.txt, ?.log
     ZSH_HIGHLIGHT_STYLES[history-expansion]=fg=blue,bold   # !!, !$
@@ -170,21 +170,21 @@ if [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
     ZSH_HIGHLIGHT_STYLES[command-substitution-delimiter]=fg=magenta,bold
     ZSH_HIGHLIGHT_STYLES[process-substitution]=none
     ZSH_HIGHLIGHT_STYLES[process-substitution-delimiter]=fg=magenta,bold
-   
+
     # Variables y asignaciones
     ZSH_HIGHLIGHT_STYLES[assign]=fg=yellow
     ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]=fg=yellow,bold
     ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=yellow,bold
     ZSH_HIGHLIGHT_STYLES[back-dollar-quoted-argument]=fg=yellow,bold
-   
+
     # Redirecciones y descriptores
     ZSH_HIGHLIGHT_STYLES[redirection]=fg=cyan,bold         # >, <, >>
     ZSH_HIGHLIGHT_STYLES[named-fd]=none
     ZSH_HIGHLIGHT_STYLES[numeric-fd]=none
-   
+
     # Comentarios
     ZSH_HIGHLIGHT_STYLES[comment]=fg=240,bold              # Gris para comentarios
-   
+
     # Brackets y paréntesis (colores en niveles)
     ZSH_HIGHLIGHT_STYLES[bracket-error]=fg=red,bold
     ZSH_HIGHLIGHT_STYLES[bracket-level-1]=fg=blue,bold
@@ -320,24 +320,24 @@ gencpg() {
     local binary="${1}"
     local output="${2:-./cpg.bin.zip}"
     local memory="${3:-3964m}"
-    
+
     # Colors
     local GREEN='\033[0;32m'
     local RED='\033[0;31m'
     local YELLOW='\033[1;33m'
     local NC='\033[0m' # No Color
-    
+
     if [ -z "$binary" ]; then
         echo -e "${RED}[!]${NC} Usage: gen_cpg <binary> [output] [memory]"
         return 1
     fi
-    
+
     echo -e "${YELLOW}[*]${NC} Generating CPG for: ${GREEN}${binary}${NC}"
     echo -e "${YELLOW}[*]${NC} Output: ${output}"
     echo -e "${YELLOW}[*]${NC} Memory: ${memory}"
-    
+
     /opt/joern/joern-cli/c2cpg.sh -J-Xmx${memory} "$binary" --output "$output"
-    
+
     if [ $? -eq 0 ]; then
         echo -e "${GREEN}[✓]${NC} CPG generated successfully"
     else
@@ -352,36 +352,36 @@ rjoern() {
     local script="${2}"
     local output="${3:-output.txt}"
     local memory="${4:-100G}"
-    
+
     # Colors
     local GREEN='\033[0;32m'
     local RED='\033[0;31m'
     local BLUE='\033[0;34m'
     local CYAN='\033[0;31m'
     local NC='\033[0m'
-    
+
     if [ -z "$cpg_file" ] || [ -z "$script" ]; then
         echo -e "${RED}[!]${NC} Usage: run_joern <cpg_file> <script> [output] [memory]"
         return 1
     fi
-    
+
     if [ ! -f "$cpg_file" ]; then
         echo -e "${RED}[✗]${NC} CPG file not found: ${cpg_file}"
         return 1
     fi
-    
+
     if [ ! -f "$script" ]; then
         echo -e "${RED}[✗]${NC} Script not found: ${script}"
         return 1
     fi
-    
+
     echo -e "${BLUE}[+]${NC} Running analysis..."
-    
+
     joern --param cpgFile="$cpg_file" \
           --param outputFile="$output" \
           --script "$script" \
           -J-Xmx${memory}
-    
+
     if [ $? -eq 0 ]; then
         echo ""
         echo -e "${GREEN}[✓]${NC} Analysis completed successfully"
@@ -403,7 +403,7 @@ alias bariants='/home/eclypsium/.scripts/build_variants.sh'
 alias ghidra='/home/eclypsium/Documents/ghidra/ghidra_12.0_PUBLIC_20251205/ghidra_12.0_PUBLIC/ghidraRun'
 alias pyghidra='/home/eclypsium/Documents/ghidra/ghidra_11.4.2_PUBLIC/support/pyghidraRun'
 alias joerncpg='/opt/joern/joern-cli/c2cpg.sh -J-Xmx3964m'
-
+alias oc='/home/eclypsium/.opencode/bin/opencode'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

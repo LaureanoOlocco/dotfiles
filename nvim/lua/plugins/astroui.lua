@@ -8,13 +8,13 @@ return {
   ---@type AstroUIOpts
   opts = {
     -- change colorscheme
-    colorscheme = "night-owl",
+    colorscheme = "cursor-dark",
     -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
     highlights = {
       init = { -- this table overrides highlights in all themes
         -- Normal = { bg = "#000000" },
-        WinBar = {bg = "#021727"},
-        WinBarNC = {bg = "#021727"},
+        WinBar = { bg = "#181818" },
+        WinBarNC = { bg = "#181818" },
       },
       astrodark = { -- a table of overrides/changes when applying the astrotheme theme
         -- Normal = { bg = "#000000" },
