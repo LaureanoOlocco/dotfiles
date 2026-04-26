@@ -1,0 +1,48 @@
+font-family = "JetBrainsMono Nerd Font"
+font-style = Regular
+font-style-bold = Bold
+font-style-italic = Italic
+font-size = 15
+
+background = #181818
+foreground = #D4D4D4
+
+cursor-color = #81A1C1
+cursor-text = #181818
+cursor-style = block
+cursor-style-blink = true
+
+selection-foreground = #E4E4E4
+selection-background = #303030
+
+search-foreground = #181818
+search-background = #EBC88D
+search-selected-foreground = #181818
+search-selected-background = #87C3FF
+
+palette = 0=#242424
+palette = 1=#FC6B83
+palette = 2=#3FA266
+palette = 3=#D2943E
+palette = 4=#81A1C1
+palette = 5=#B48EAD
+palette = 6=#88C0D0
+palette = 7=#E4E4E4
+palette = 8=#4A4A4A
+palette = 9=#FC6B83
+palette = 10=#70B489
+palette = 11=#F1B467
+palette = 12=#87A6C4
+palette = 13=#B48EAD
+palette = 14=#88C0D0
+palette = 15=#E4E4E4
+
+window-padding-x = 0
+window-padding-y = 0
+maximize = true
+
+scrollback-limit = 10000000
+term = xterm-256color
+
+keybind = f11=toggle_fullscreen
+keybind = shift+enter=text:\x1b\r

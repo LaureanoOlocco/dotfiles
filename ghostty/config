@@ -1,0 +1,66 @@
+# font & text
+font-family = "JetBrainsMono Nerd Font"
+font-style = Regular
+font-style-bold = Bold
+font-style-italic = Italic
+font-size = 15
+font-codepoint-map = U+E000-U+F8FF=JetBrainsMono Nerd Font
+font-codepoint-map = U+F0000-U+10FFFF=JetBrainsMono Nerd Font
+adjust-icon-height = 30%
+adjust-box-thickness = 1
+
+# window & ui
+title = " "
+window-decoration = server
+window-padding-x = 6
+window-width = 90
+window-height = 25
+keybind = f11=toggle_fullscreen
+shell-integration-features = no-cursor,sudo,no-title
+
+# colors & appearance
+background = #101010
+foreground = #FFFFFF
+# cursor
+cursor-color = #81A1C1
+cursor-text = #181818
+cursor-style-blink = true
+cursor-click-to-move = true
+adjust-cursor-thickness = 2
+
+# mouse & input
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = 0.4
+
+# clipboard
+copy-on-select = clipboard
+clipboard-trim-trailing-spaces = true
+
+# freetype (linux font rendering)
+freetype-load-flags = no-hinting
+
+# keybinds
+keybind = shift+enter=text:\x1b\r
+
+# theme
+theme = Cursor Dark
+
+# ventana / sesión
+confirm-close-surface = false
+quit-after-last-window-closed = true
+
+# scrollback
+scrollback-limit = 100000
+
+# performance
+window-vsync = true
+linux-cgroup = single-instance
+
+# updates
+auto-update = check
+
+# bell
+bell-features = no-audio,no-attention,no-title
+
+# urls clickeables
+link-url = true

@@ -11,6 +11,7 @@ declare -A CONFIGS=(
   ["$HOME/.config/nvim"]="$DOTFILES_DIR/nvim"
   ["$HOME/.config/zellij"]="$DOTFILES_DIR/zellij"
   ["$HOME/.config/alacritty"]="$DOTFILES_DIR/alacritty"  # si existe
+  ["$HOME/.config/ghostty"]="$DOTFILES_DIR/ghostty"  # si existe
   ["$HOME/.config/starship.toml"]="$DOTFILES_DIR/starship/starship.toml"
   ["$HOME/.zshrc"]="$DOTFILES_DIR/zsh/.zshrc"
   ["$HOME/.zsh_aliases"]="$DOTFILES_DIR/zsh/.zsh_aliases"  # si existe

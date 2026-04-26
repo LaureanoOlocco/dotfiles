@@ -65,7 +65,7 @@ pipestatus = true
 disabled = false
 time_format = "%R"
 style = "bg:panel"
-format = '[[  ](fg:blue_soft bg:panel)[$time ](fg:cyan bg:panel)]($style)'
+format = '[[󰀠  ](fg:blue_soft bg:panel)[$time ](fg:cyan bg:panel)]($style)'
 
 
 [directory]
