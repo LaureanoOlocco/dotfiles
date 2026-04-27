@@ -10,6 +10,7 @@ My personal configuration files.
 | **Zellij** | `zellij/` | Terminal multiplexer config |
 | **Starship** | `starship/` | Shell prompt theme |
 | **Zsh** | `zsh/` | Shell configuration (.zshrc) |
+| **Zed** | `zed/` | Editor settings, keymaps and themes |
 | **GNOME Terminal** | `gnome-terminal/` | Night Owl terminal color scheme |
 
 ## Installation
@@ -37,6 +38,14 @@ ln -sf $(pwd)/starship/starship.toml ~/.config/starship.toml
 
 ```bash
 ln -sf $(pwd)/zsh/.zshrc ~/.zshrc
+```
+
+### Zed
+
+```bash
+mkdir -p ~/.config/zed
+ln -sf $(pwd)/zed/settings.json ~/.config/zed/settings.json
+ln -sf $(pwd)/zed/keymap.json ~/.config/zed/keymap.json
 ```
 
 ### GNOME Terminal

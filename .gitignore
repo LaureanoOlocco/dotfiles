@@ -2,6 +2,10 @@
 nvim/plugin/
 nvim/.luarc.json
 
+# Zed
+zed/*backup*.json
+zed/*.bak
+
 # OS
 .DS_Store
 Thumbs.db

@@ -61,6 +61,7 @@ setopt hist_verify            # show command with history expansion to user befo
 
 # force zsh to show the complete history
 alias history="history 0"
+alias gs="git status"
 
 # configure `time` format
 TIMEFMT=$'\nreal\t%E\nuser\t%U\nsys\t%S\ncpu\t%P'
@@ -438,7 +439,10 @@ zle-line-init() {
     return ret
 }
 zle -N zle-line-init
-eval "$(zellij setup --generate-auto-start zsh)"
+
+if [[ "$ZELLIJ_AUTO_START" != "false" ]]; then
+  eval "$(zellij setup --generate-auto-start zsh)"
+fi
 
 # opencode
 export PATH=/home/eclypsium/.opencode/bin:$PATH

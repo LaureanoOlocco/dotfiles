@@ -1,0 +1,27 @@
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      "alt-left": "pane::ActivatePreviousItem",
+      "alt-right": "pane::ActivateNextItem",
+      "alt-q": "workspace::ToggleLeftDock",
+      "alt-e": "workspace::ToggleRightDock",
+      "ctrl-alt-b": null,
+      "ctrl-~": null,
+      "f7": "terminal_panel::ToggleFocus"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "f7": "workspace::ToggleBottomDock"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "ctrl-alt-k": "editor::AddSelectionAbove",
+      "ctrl-alt-j": "editor::AddSelectionBelow"
+    }
+  }
+]

@@ -1,4 +1,4 @@
-# font & text
+# Font
 font-family = "JetBrainsMono Nerd Font"
 font-style = Regular
 font-style-bold = Bold
@@ -6,61 +6,65 @@ font-style-italic = Italic
 font-size = 15
 font-codepoint-map = U+E000-U+F8FF=JetBrainsMono Nerd Font
 font-codepoint-map = U+F0000-U+10FFFF=JetBrainsMono Nerd Font
+
+# Font Rendering
+freetype-load-flags = no-hinting
 adjust-icon-height = 30%
 adjust-box-thickness = 1
 
-# window & ui
-title = " "
-window-decoration = server
-window-padding-x = 6
-window-width = 90
-window-height = 25
-keybind = f11=toggle_fullscreen
-shell-integration-features = no-cursor,sudo,no-title
-
-# colors & appearance
+# Theme
+theme = Cursor Dark
 background = #101010
 foreground = #FFFFFF
-# cursor
+minimum-contrast = 1.1
+
+# Transparency
+background-opacity = 0.97
+background-blur = 30
+background-opacity-cells = true
+
+# Cursor
 cursor-color = #81A1C1
 cursor-text = #181818
 cursor-style-blink = true
 cursor-click-to-move = true
 adjust-cursor-thickness = 2
 
-# mouse & input
-mouse-hide-while-typing = true
-mouse-scroll-multiplier = 0.4
+# Window
+title = " "
+window-decoration = server
+window-padding-x = 6
+window-width = 90
+window-height = 25
+maximize = true
 
-# clipboard
-copy-on-select = clipboard
-clipboard-trim-trailing-spaces = true
-
-# freetype (linux font rendering)
-freetype-load-flags = no-hinting
-
-# keybinds
-keybind = shift+enter=text:\x1b\r
-
-# theme
-theme = Cursor Dark
-
-# ventana / sesión
+# Session
+shell-integration-features = no-cursor,sudo,no-title
 confirm-close-surface = false
 quit-after-last-window-closed = true
 
-# scrollback
+# Mouse
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = 0.4
+link-url = true
+
+# Keybinds
+keybind = f11=toggle_fullscreen
+keybind = shift+enter=text:\x1b\r
+
+# Clipboard
+copy-on-select = clipboard
+clipboard-trim-trailing-spaces = true
+
+# Scrollback
 scrollback-limit = 100000
 
-# performance
+# Performance
 window-vsync = true
 linux-cgroup = single-instance
 
-# updates
-auto-update = check
-
-# bell
+# Bell
 bell-features = no-audio,no-attention,no-title
 
-# urls clickeables
-link-url = true
+# Updates
+auto-update = check
