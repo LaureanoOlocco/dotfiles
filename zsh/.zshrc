@@ -440,7 +440,7 @@ zle-line-init() {
 }
 zle -N zle-line-init
 
-if [[ "$ZELLIJ_AUTO_START" != "false" ]]; then
+if [[ "$ZELLIJ_AUTO_START" != "false" && -z "$GNOME_TERMINAL_SCREEN" && -z "$GNOME_TERMINAL_SERVICE" ]]; then
   eval "$(zellij setup --generate-auto-start zsh)"
 fi
 

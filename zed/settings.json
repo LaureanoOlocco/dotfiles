@@ -22,15 +22,6 @@
   },
   "agent_servers": {
     "claude-acp": {
-      "default_config_options": {
-        "mode": "plan",
-        "model": "haiku"
-      },
-      "favorite_config_option_values": {
-        "mode": [
-          "plan"
-        ]
-      },
       "type": "registry"
     }
   },
@@ -52,9 +43,10 @@
       }
     },
     "default_model": {
-      "enable_thinking": false,
-      "provider": "openai",
-      "model": "gpt-5.5"
+      "effort": "high",
+      "enable_thinking": true,
+      "provider": "copilot_chat",
+      "model": "gpt-5.2"
     },
     "favorite_models": [
       {
@@ -104,4 +96,18 @@
     "light": "One Light",
     "dark": "Cursor Dark",
   },
+  "file_types": {
+    "YAML": ["yaml", "yml"],
+    "Yara": ["yar", "yara"]
+  },
+  "languages": {
+    "Yara": {
+      "enable_language_server": false,
+      "language_servers": ["!yls"]
+    },
+    "Scala": {
+      "enable_language_server": false,
+      "language_servers": ["!metals"]
+    }
+  }
 }

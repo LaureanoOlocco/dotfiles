@@ -4,8 +4,15 @@
     "bindings": {
       "alt-left": "pane::ActivatePreviousItem",
       "alt-right": "pane::ActivateNextItem",
+      "alt-c": "pane::CloseActiveItem",
       "alt-q": "workspace::ToggleLeftDock",
-      "alt-e": "workspace::ToggleRightDock",
+      "alt-e": "project_panel::ToggleFocus",
+      "alt-f f": "file_finder::Toggle",
+      "alt-f w": "pane::DeploySearch",
+      "alt-p": "workspace::ToggleRightDock",
+      "alt-g": "git_panel::ToggleFocus",
+      "ctrl-p": null,
+      "ctrl-shift-g": null,
       "ctrl-alt-b": null,
       "ctrl-~": null,
       "f7": "terminal_panel::ToggleFocus"
@@ -18,10 +25,34 @@
     }
   },
   {
+    "context": "GitPanel",
+    "bindings": {
+      "alt-g": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "alt-e": "workspace::ToggleLeftDock"
+    }
+  },
+  {
     "context": "Editor && vim_mode == normal",
     "bindings": {
       "ctrl-alt-k": "editor::AddSelectionAbove",
       "ctrl-alt-j": "editor::AddSelectionBelow"
+    }
+  },
+  {
+    "context": "Editor && showing_completions",
+    "bindings": {
+      "alt-l": "editor::ConfirmCompletion"
+    }
+  },
+  {
+    "context": "Editor && edit_prediction",
+    "bindings": {
+      "alt-l": "editor::AcceptEditPrediction"
     }
   }
 ]

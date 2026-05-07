@@ -1,25 +1,26 @@
 # Font
-font-family = "JetBrainsMono Nerd Font"
+font-family = "CaskaydiaCove Nerd Font"
 font-style = Regular
 font-style-bold = Bold
 font-style-italic = Italic
-font-size = 15
+font-size = 16
+font-feature = liga,clig,calt
 font-codepoint-map = U+E000-U+F8FF=JetBrainsMono Nerd Font
 font-codepoint-map = U+F0000-U+10FFFF=JetBrainsMono Nerd Font
 
 # Font Rendering
 freetype-load-flags = no-hinting
 adjust-icon-height = 30%
-adjust-box-thickness = 1
+font-thicken = false
 
 # Theme
 theme = Cursor Dark
-background = #101010
-foreground = #FFFFFF
-minimum-contrast = 1.1
+background = #181818
+foreground = #BEBEBE
+minimum-contrast = 1.0
 
 # Transparency
-background-opacity = 0.97
+background-opacity = 1
 background-blur = 30
 background-opacity-cells = true
 
