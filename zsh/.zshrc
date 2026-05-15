@@ -9,6 +9,7 @@ setopt nonomatch           # hide error message if there is no match for the pat
 setopt notify              # report the status of background jobs immediately
 setopt numericglobsort     # sort filenames numerically when it makes sense
 setopt promptsubst         # enable command substitution in prompt
+setopt ignore_eof          # prevent ctrl-d from closing the shell/terminal
 
 WORDCHARS=${WORDCHARS//\/} # Don't consider certain characters part of the word
 

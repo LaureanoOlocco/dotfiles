@@ -96,7 +96,7 @@ keybinds clear-defaults=true {
         bind "c" { SearchToggleOption "CaseSensitivity"; }
         bind "n" { Search "down"; }
         bind "o" { SearchToggleOption "WholeWord"; }
-        bind "p" { Search "up"; }
+        bind "Shift n" { Search "up"; }
         bind "w" { SearchToggleOption "Wrap"; }
     }
     session {

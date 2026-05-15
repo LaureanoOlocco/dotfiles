@@ -5,13 +5,16 @@
       "alt-left": "pane::ActivatePreviousItem",
       "alt-right": "pane::ActivateNextItem",
       "alt-c": "pane::CloseActiveItem",
-      "alt-q": "workspace::ToggleLeftDock",
+      "alt-q": "zed::Quit",
       "alt-e": "project_panel::ToggleFocus",
-      "alt-f f": "file_finder::Toggle",
-      "alt-f w": "pane::DeploySearch",
+      "alt-f": "file_finder::Toggle",
+      "alt-w": "pane::DeploySearch",
+      "alt-[": "multi_workspace::ToggleWorkspaceSidebar",
       "alt-p": "workspace::ToggleRightDock",
-      "alt-g": "git_panel::ToggleFocus",
+      "alt-g g": "git_panel::ToggleFocus",
+      "alt-g p": "git::Push",
       "ctrl-p": null,
+      "ctrl-shift-c": null,
       "ctrl-shift-g": null,
       "ctrl-alt-b": null,
       "ctrl-~": null,
@@ -27,7 +30,8 @@
   {
     "context": "GitPanel",
     "bindings": {
-      "alt-g": "workspace::ToggleLeftDock"
+      "alt-g g": "workspace::ToggleLeftDock",
+      "alt-g p": "git::Push"
     }
   },
   {
@@ -37,8 +41,28 @@
     }
   },
   {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "space": "project_panel::Open"
+    }
+  },
+  {
+    "context": "BufferSearchBar",
+    "bindings": {
+      "escape": "buffer_search::Dismiss"
+    }
+  },
+  {
+    "context": "BufferSearchBar > Editor",
+    "bindings": {
+      "escape": "buffer_search::Dismiss"
+    }
+  },
+  {
     "context": "Editor && vim_mode == normal",
     "bindings": {
+      "tab": "tab_switcher::Toggle",
+      "shift-tab": ["tab_switcher::Toggle", { "select_last": true }],
       "ctrl-alt-k": "editor::AddSelectionAbove",
       "ctrl-alt-j": "editor::AddSelectionBelow"
     }
@@ -52,6 +76,7 @@
   {
     "context": "Editor && edit_prediction",
     "bindings": {
+      "alt-[": "multi_workspace::ToggleWorkspaceSidebar",
       "alt-l": "editor::AcceptEditPrediction"
     }
   }

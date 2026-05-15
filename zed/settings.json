@@ -26,12 +26,14 @@
     }
   },
   "edit_predictions": {
+    "provider": "copilot",
     "enabled_in_text_threads": true
   },
   "format_on_save": "off",
   "agent": {
+    "sidebar_side": "right",
     "dock": "right",
-    "default_profile": "ask",
+    "default_profile": "write",
     "tool_permissions": {
       "tools": {
         "move_path": {
@@ -43,10 +45,9 @@
       }
     },
     "default_model": {
-      "effort": "high",
-      "enable_thinking": true,
-      "provider": "copilot_chat",
-      "model": "gpt-5.2"
+      "enable_thinking": false,
+      "provider": "openai",
+      "model": "gpt-5.5"
     },
     "favorite_models": [
       {

@@ -21,9 +21,9 @@ return {
       enabled = true,
       animate = {
         enabled = true,
-        style = "up_down",
-        easing = "outQuart",
-        duration = { step = 25, total = 1600 },
+        style = "out",
+        easing = "linear",
+        duration = { step = 20, total = 500 },
       },
       scope = {
         enabled = true,
@@ -32,7 +32,10 @@ return {
         only_current = false,
       },
       chunk = {
-        enabled = false,
+        enabled = true,
+        char = {
+          arrow = "",
+        },
       },
     },
     scope = { enabled = true },
